@@ -35,7 +35,7 @@ def show_pca(dataFrame):
         palette=sns.color_palette("hls", 7),
         data=dataFrame,
         legend="full",
-        alpha=0.7
+        alpha=1
     )
 
     plt.show()
@@ -43,7 +43,7 @@ def show_pca(dataFrame):
 
 def show_tsne(dataFrame):
     dataFrame = dataFrame.copy()
-    tsne = TSNE(n_components=2, verbose=1, perplexity=40, n_iter=300)
+    tsne = TSNE(n_components=2, verbose=1, perplexity=50, n_iter=5000)
     tsne_results = tsne.fit_transform(dataFrame[dataFrame.columns[:-1]].values)
 
     dataFrame['tsne-one'] = tsne_results[:, 0]
@@ -55,7 +55,7 @@ def show_tsne(dataFrame):
         palette=sns.color_palette("hls", 7),
         data=dataFrame,
         legend="full",
-        alpha=0.3
+        alpha=1
     )
 
     plt.show()
