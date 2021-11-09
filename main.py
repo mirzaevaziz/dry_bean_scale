@@ -32,6 +32,7 @@ def show_pca(dataFrame):
     sns.scatterplot(
         x="pca-one", y="pca-two",
         hue="Class",
+        style="Class",
         palette=sns.color_palette("hls", 7),
         data=dataFrame,
         legend="full",
@@ -52,6 +53,7 @@ def show_tsne(dataFrame):
     sns.scatterplot(
         x="tsne-one", y="tsne-two",
         hue="Class",
+        style="Class",
         palette=sns.color_palette("hls", 7),
         data=dataFrame,
         legend="full",
